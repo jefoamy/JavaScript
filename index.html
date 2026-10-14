@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header"></div>
+
+    <!-- TAHAP 1, memasukkan nama dan jumlah pilihan -->
+    <div id="tahap1" class="tahap aktif">
+        <label>Nama : <br><input type="text" id="inputNama"></label><br><br>
+        <label>Jumlah Pilihan : <br><input type="number" id="inputJml" min="1"></label><br>
+        <div id="error1" class="error-msg"></div>
+        <button id="btnOk1">OK</button>
+    </div>
+
+    <!-- TAHAP 2, masukkan teks pilihan sebanyak jumlah -->
+    <div id="tahap2" class="tahap">
+        <div id="containerPilihan"></div>
+        <div id="error2" class="error-msg"></div>
+        <button id="btnOk2">OK</button>
+    </div>
+
+    <!-- TAHAP 3, memilih salah satu pilihan -->
+    <div id="tahap3" class="tahap">
+        <p>Pilihan :</p>
+        <div id="containerRadio"></div>
+        <div id="error3" class="error-msg"></div>
+        <button id="btnOk3">OK</button>
+    </div>
+
+    <!-- TAHAP 4, memasukkan email -->
+    <div id="tahap4" class="tahap">
+        <label>Email : <br><input type="email" id="inputEmail" placeholder="email@domain.com"></label><br>
+        <div id="error4" class="error-msg"></div>
+        <button id="btnOk4">OK</button>
+    </div>
+
+    <!-- TAHAP 5, output deskripsi -->
+    <div id="tahap5" class="tahap">
+        <p id="hasilAkhir"></p>
+    </div>
+
+    <script src="javaScript.js"></script>
+</body>
+</html>
