@@ -6,7 +6,7 @@ let email = "";
 let jml = 0;
 
 // Tahap1 ke Tahap 2
-document.getElementById('btnOk1').addEventListener('click', function () {
+document.getElementById('btnOk1').addEventListener('click', function() {
     nama = document.getElementById('inputNama').value.trim();
     jml = Number(document.getElementById('inputJml').value);
 
@@ -37,4 +37,51 @@ document.getElementById('btnOk1').addEventListener('click', function () {
 
     // Menampilkan Tahap 2
     document.getElementById('tahap2').classList.add('aktif');
+});
+// Tahap 2 ke Tahap 3
+document.getElementById('btnOk2').addEventListener('click', function() {
+    arrayPilihan = []; // Kosongkan array sebelum diisi ulang
+    let adaError = false;
+
+    // Loop untuk mengecek setiap input pilihan
+    for (let i = 1; i <= jml; i++) {
+        let teksVal = document.getElementById(`inputPilihan${i}`).value.trim();
+        if (teksVal === "") {
+            adaError = true;
+            break;
+        }
+        arrayPilihan.push(teksVal); // Memasukkan ke dalam Array
+    }
+
+    // Error Validasi
+    if (adaError) {
+        document.getElementById('error2').innerText = "Seluruh Teks Pilihan harus diisi!";
+        return;
+    }
+
+    document.getElementById('error2').innerText = "";
+    let inputs = document.querySelectorAll('.teks-pilihan');
+    inputs.forEach(input => input.disabled = true); // Kunci semua input pilihan
+    this.disabled = true;
+
+    // Membuat Radio Button
+    let radioContainer = document.getElementById('containerRadio');
+    radioContainer.innerHTML = "";
+    arrayPilihan.forEach(function(teks) {
+        let label = document.createElement('label');
+        let radio = document.createElement('input');
+        radio.type = "radio";
+        radio.name = "pilihanRadio";
+        radio.value = teks;
+
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(" " + teks));
+
+        radioContainer.appendChild(label);
+        radioContainer.appendChild(document.createElement('br'));
+        radioContainer.appendChild(document.createElement('br'));
+    });
+
+    // Menampilkan Tahap 3
+    document.getElementById('tahap3').classList.add('aktif');
 });

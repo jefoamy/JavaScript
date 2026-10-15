@@ -1,23 +1,18 @@
 body {
     font-family: Arial, sans-serif;
+    font-weight: bold;
     margin: 20px;
     line-height: 1.6;
 }
 /* HEADER */
-.header {
-    border-bottom: 2px solid #333;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.header img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.welcome {
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    display: block;
+    margin: 20px 10px 20px 10px;
+    border-radius: 15px;
+    background-color: white;
 }
 /* CONTAINER */
 .tahap {
@@ -27,6 +22,16 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     display: none;
+}
+#tahap1 {
+    background-color: rgba(242, 248, 69, 0.845);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+}
+#tahap2 {
+    background-color: rgba(100, 178, 237, 0.849);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
 }
 .tahap.aktif {
     display: block;
