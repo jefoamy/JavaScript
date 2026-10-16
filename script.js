@@ -85,3 +85,25 @@ document.getElementById('btnOk2').addEventListener('click', function() {
     // Menampilkan Tahap 3
     document.getElementById('tahap3').classList.add('aktif');
 });
+// Tahap ke Tahap 4
+document.getElementById('btnOk3').addEventListener('click', function() {
+    // Mencari radio button yang dicek
+    let radioDipilih = document.querySelector('input[name="pilihanRadio"]:checked');
+
+    // Error Trapping
+    if (!radioDipilih) {
+        document.getElementById('error3').innerText = "Anda harus memilih salah satu!";
+        return;
+    }
+
+    pilihanTerpilih = radioDipilih.value;
+    document.getElementById('error3').innerText = "";
+
+    // Mengunci semua radio button
+    let radios = document.querySelectorAll('input[name="pilihanRadio"]');
+    radios.forEach(radio => radio.disabled = true);
+    this.disabled = true;
+
+    // Menampilkan Tahap 4
+    document.getElementById('tahap4').classList.add('aktif');
+});
