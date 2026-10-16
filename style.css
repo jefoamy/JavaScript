@@ -33,6 +33,11 @@ body {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
     border-radius: 20px;
 }
+#tahap3 {
+    background-color: rgba(9, 9, 124, 0.856);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+}
 .tahap.aktif {
     display: block;
 }
