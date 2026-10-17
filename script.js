@@ -1,4 +1,3 @@
-// initial variabel
 let nama = "";
 let arrayPilihan = [];
 let pilihanTerpilih = "";
@@ -84,4 +83,52 @@ document.getElementById('btnOk2').addEventListener('click', function() {
 
     // Menampilkan Tahap 3
     document.getElementById('tahap3').classList.add('aktif');
+});
+// Tahap ke Tahap 4
+document.getElementById('btnOk3').addEventListener('click', function() {
+    // Mencari radio button yang dicek
+    let radioDipilih = document.querySelector('input[name="pilihanRadio"]:checked');
+
+    // Error Trapping
+    if (!radioDipilih) {
+        document.getElementById('error3').innerText = "Anda harus memilih salah satu!";
+        return;
+    }
+
+    pilihanTerpilih = radioDipilih.value;
+    document.getElementById('error3').innerText = "";
+
+    // Mengunci semua radio button
+    let radios = document.querySelectorAll('input[name="pilihanRadio"]');
+    radios.forEach(radio => radio.disabled = true);
+    this.disabled = true;
+
+    // Menampilkan Tahap 4
+    document.getElementById('tahap4').classList.add('aktif');
+});
+// Tahap 4 ke Tahap 5
+document.getElementById('btnOk4').addEventListener('click', function() {
+    email = document.getElementById('inputEmail').value.trim();
+
+    let emailFormat = /^[A-Za-z0-9]+([._%+-][A-Za-z0-9]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[A-Za-z]{2,}$/;
+
+    if (!emailFormat.test(email)) {
+        document.getElementById('error4').innerText = "Format email salah! Gunakan format email@domain.com";
+        return;
+    }
+
+    document.getElementById('error4').innerText = "";
+    document.getElementById('inputEmail').disabled = true;
+    this.disabled = true;
+
+    // Menggabungkan array menjadi 1 teks dipisah koma
+    // Tahap 5
+    let teksPilihanGabungan = arrayPilihan.join(", ");
+
+    let kalimatAkhir = `Hallo, nama saya <strong>${nama}</strong>, email <strong>${email}</strong>,
+    saya mempunyai sejumlah <strong>${jml}</strong> pilihan yaitu <strong>${teksPilihanGabungan}</strong>,
+    dan saya memilih <strong>${pilihanTerpilih}</strong>.`;
+
+    document.getElementById('hasilAkhir').innerHTML = kalimatAkhir;
+    document.getElementById('tahap5').classList.add('aktif');
 });

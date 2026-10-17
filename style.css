@@ -38,6 +38,16 @@ body {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
     border-radius: 20px;
 }
+#tahap4 {
+    background-color: rgba(124, 84, 9, 0.856);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+}
+#tahap5 {
+    background-color: rgba(124, 9, 101, 0.856);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+}
 .tahap.aktif {
     display: block;
 }
